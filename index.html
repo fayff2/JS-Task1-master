@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Selecting an Element!</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul class="container">
+      <li class="box" id="box-1"></li>
+      <li class="box box-to-select" id="box-2"></li>
+      <li class="box box-to-select" id="box-3"></li>
+      <li class="box box-to-select" id="box-4"></li>
+      <li class="box" id="box-5"></li>
+      <li class="box box-to-select-2" id="box-6"></li>
+      <li class="box box-to-select-2" id="box-7"></li>
+      <li class="box box-to-select-2" id="box-8"></li>
+    </ul>
+  </div>
+
+  <script>
+      //Get element by id
+    
+firistbox = document.getElementById('box-1')
+firistbox.addEventListener('click' , function(event){
+  event.currentTarget.style.backgroundColor='red';
+})
+
+
+      //Get element by className
+
+      var boxes =document.getElementsByClassName('box-to-select');
+      for(const elemnt of boxes){
+        elemnt.addEventListener('click' , function(event){
+          event.currentTarget.style.backgroundColor='red';  
+        })
+      }
+
+
+
+
+      //Iterate boxes through a For of loop to add functionallity
+      //Get Element with qeurySelector
+
+      boxid =document.querySelector('#box-5');
+
+      boxid.addEventListener('click' , function(event){
+          event.currentTarget.style.backgroundColor='yellow';  
+        })
+
+
+
+      //Get element by querySelectorAll
+      //Iterate boxes through a For of loop to add functionallity
+
+      var allbox =document.querySelectorAll('.box-to-select-2');
+      for(const elemnt of allbox){
+        elemnt.addEventListener('click' , function(event){
+          event.currentTarget.style.backgroundColor='green';  
+        })
+      }
+
+  </script>
+</body>
+
+</html>
